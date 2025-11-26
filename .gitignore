@@ -1,0 +1,13 @@
+*.pth
+*.tar
+*.slurm
+__pycache__/
+*.pyc
+logs/
+*.npy
+*.ipynb
+*.h5
+*.ckpt
+*.csv
+*.json
+*.out
