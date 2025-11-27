@@ -36,6 +36,7 @@ pip install torch torchvision numpy opencv-python pillow tqdm natsort matplotlib
 
 To run the training and testing scripts, organize your downloaded data as follows:
 
+<pre>
 data_root/
 ├── binary/
 │   ├── train/
@@ -47,6 +48,7 @@ data_root/
 └── multiclass/
     ├── images/
     └── labels/
+</pre>
 
 
 ## Usage: Binary Segmentation
