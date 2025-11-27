@@ -23,12 +23,14 @@ The dataset and pre-trained models are hosted on Zenodo:
 
 
 # Clone the repository
+```bash
 git clone [https://github.com/janetkok/Root-Segmentation-Beyond-Species-Boundaries.git](https://github.com/janetkok/Root-Segmentation-Beyond-Species-Boundaries.git)
 cd Root-Segmentation-Beyond-Species-Boundaries
-
+```
 # Install dependencies
+```bash
 pip install torch torchvision numpy opencv-python pillow tqdm natsort matplotlib
-
+```
 
 ## Directory Structure
 
