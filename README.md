@@ -21,7 +21,7 @@ The dataset and pre-trained models are hosted on Zenodo:
 
 ### Prerequisites
 
-```bash
+
 # Clone the repository
 git clone [https://github.com/janetkok/Root-Segmentation-Beyond-Species-Boundaries.git](https://github.com/janetkok/Root-Segmentation-Beyond-Species-Boundaries.git)
 cd Root-Segmentation-Beyond-Species-Boundaries
