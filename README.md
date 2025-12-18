@@ -147,4 +147,15 @@ python paint/test.py \
   --model_path '/path/to/your/best_model.pth'
 ```
 
+## Citation
+```bash
+@article{qian2025root,
+  title={Root Segmentation Beyond Species Boundaries: A Generalizable Framework for Anatomical Analysis},
+  author={Qian, Yifei and Kok, Yong En and Janes, George and Nakombo-Gbassault, Princia and Atkinson, Brian and Atkinson, Jonathan and Hanlon, Molly and Wells, Darren M and Pound, Michael P},
+  journal={Plant Phenomics},
+  pages={100146},
+  year={2025},
+  publisher={Elsevier}
+}
 
+```
