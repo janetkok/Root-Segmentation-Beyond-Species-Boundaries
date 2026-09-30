@@ -20,8 +20,8 @@ def gradient_orientation_robust(img, ksize):
 
 
 
-im_list = sorted(glob.glob(os.path.join('/data/ezajk13/plant/multiclass/images', '*.png')))
-i = 0
+im_list = sorted(glob.glob(os.path.join('/data/ezajk13/plant/painting/wheat_raw', '*.TIFF')))
+i = 179
 
 color_table = {
     (0, 0, 0): 0,
@@ -39,15 +39,50 @@ color_table = {
 for j in range(len(im_list)):
     im = cv2.imread(im_list[j])
     print(im_list[j])
-
-    im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-
+    cv2.imwrite('/data/ezajk13/plant/painting/images/{}.png'.format(i), im)
+    im = cv2.imread(im_list[j], 0)
+    # im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+    # color_path = im_list[j].replace('.TIFF', '.png')
+    # height_cv2, width_cv2 = im.shape[:2]
+    # im_arr = Image.open(color_path).convert('RGB')
+    # im_arr = im_arr.resize((width_cv2, height_cv2), Image.NEAREST)
+    # im_arr = np.array(im_arr)
     gradient3 = gradient_orientation_robust(im, 3)
+    gradient5 = gradient_orientation_robust(im, 5)
     gradient7 = gradient_orientation_robust(im, 7)
+    # # img = cv2.GaussianBlur(im, (15, 15), 0)
 
+    # # im_75 = cv2.adaptiveThreshold(
+    # #     img, 255,
+    # #     cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+    # #     cv2.THRESH_BINARY_INV,
+    # #     75, 1
+    # # )
 
-    cv2.imwrite('/data/ezajk13/plant/wheat/images_gradient3/{}.png'.format(i), gradient3)
-    cv2.imwrite('/data/ezajk13/plant/wheat/images_gradient7/{}.png'.format(i), gradient7)
+    # # im_55 = cv2.adaptiveThreshold(
+    # #     img, 255,
+    # #     cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+    # #     cv2.THRESH_BINARY_INV,
+    # #     55, 1
+    # # )
 
+    # # im_35 = cv2.adaptiveThreshold(
+    # #     img, 255,
+    # #     cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+    # #     cv2.THRESH_BINARY_INV,
+    # #     35, 1
+    # # )
+
+    # label_map = np.zeros((im_arr.shape[0], im_arr.shape[1]), dtype=np.uint8)
+    # for color, label in color_table.items():
+    #     mask = np.all(im_arr == color, axis=-1)
+    #     label_map[mask] = label
+    # np.save('/data/ezajk13/plant/wheat/labels/{}.npy'.format(i), label_map)
+    cv2.imwrite('/data/ezajk13/plant/painting/images_gradient3/{}.png'.format(i), gradient3)
+    # cv2.imwrite('/data/ezajk13/plant/unlabeled/images_gradient5/{}.png'.format(i), gradient5)
+    cv2.imwrite('/data/ezajk13/plant/painting/images_gradient7/{}.png'.format(i), gradient7)
+    # cv2.imwrite('/data/ezajk13/plant/unlabeled/images_35/{}.png'.format(i), im_35)
+    # cv2.imwrite('/data/ezajk13/plant/unlabeled/images_75/{}.png'.format(i), im_75)
+    # cv2.imwrite('/data/ezajk13/plant/unlabeled/images_55/{}.png'.format(i), im_55)
 
     i=i+1
